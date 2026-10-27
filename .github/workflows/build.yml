@@ -9,13 +9,12 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-      
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: "8.9"
-      - run: unzip -q Ben10Launcher.zip
-      - run: cd Ben10Launcher && gradle assembleDebug --no-daemon
+      - run: unzip -q Ben10GameLauncher.zip
+      - run: cd Ben10GameLauncher && gradle assembleDebug --no-daemon
       - uses: actions/upload-artifact@v4
         with:
-          name: Ben10Launcher-apk
-          path: Ben10Launcher/app/build/outputs/apk/debug/app-debug.apk
+          name: Ben10GameLauncher-apk
+          path: Ben10GameLauncher/app/build/outputs/apk/debug/app-debug.apk
